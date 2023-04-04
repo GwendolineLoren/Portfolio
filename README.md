@@ -1,4 +1,4 @@
-# HyperionDev Full Stack Web Development Bootcamp - Level 3 - Task 10 - Next.js app - Developer Portfolio
+# Web Development Bootcamp - Next.js app - Portfolio
 
 
 ## Table of Contents

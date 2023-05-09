@@ -17,6 +17,14 @@ const Layout = (props) => (
   <div>
     <Head>
       {/* Import bootstrap stylesheet */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-267469379-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-267469379-1');
+      </script>
       <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

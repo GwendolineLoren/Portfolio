@@ -16,6 +16,16 @@ const imgStyle = {
 // About page
 export default () => (
   <Layout>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-267469379-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-267469379-1');
+    </script>
+
     <div className="breadcrumbs">
       <a href="/">Home</a> {">"} <b>About</b>
     </div>

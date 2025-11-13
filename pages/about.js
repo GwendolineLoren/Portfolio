@@ -1,140 +1,163 @@
-// Import layout component
-import Layout from "../components/Layout";
-
-// Import bootstrap image component
-import Image from "react-bootstrap/Image";
-
-// Styling for image
-const imgStyle = {
-  width: 220,
-  margin: "0rem 1rem 0rem 1rem",
-  border: "1px #c9c9c9 solid",
-  borderRadius: "9px",
-  boxShadow: "2px 2px 8px #c9c9c9",
-};
-
 // About page
 export default function About() {
   return (
     <Layout>
       <div className="breadcrumbs">
-        <a href="/">Home</a> {">"} <b>About</b>
+        <a href="/">Home</a> <span>&gt;</span> <b>About</b>
       </div>
 
       <div className="aboutPage">
-        <div className="paraAndImage">
-          <div className="para">
-            <h2>About</h2>
+        <div className="intro">
+          <div className="profileImage">
+            <Image src="/profile.jpg" roundedCircle style={{ width: "180px" }} />
+          </div>
+          <div className="introText">
+            <h2>Hello! I’m Gwendoline</h2>
             <p>
-              Gwendoline Loren Dedda Maganga is my name, and I am a friendly, easygoing person who enjoys meeting new people. I enjoy taking on new tasks and find the world to be a fascinating place. Reading, dancing, and web development are my greatest passions. I am inspired by the prospect of a rewarding career in Full Stack Web Development, and I am having a blast learning how to create helpful websites.
+              I’m a friendly, easygoing person passionate about web development, dancing, and reading. I love meeting new people and tackling challenges. Currently, I’m diving deep into Full Stack Web Development, creating useful and elegant websites along the way.
             </p>
           </div>
         </div>
 
         <div className="eduAndWork">
-          <div className="edu">
+          <div className="edu card">
             <h3>Education</h3>
-            <p>
-              My prior education is listed below:
-              <br />
-              <div className="priorEduDivs">
-                <b>HyperionDev</b> <br />
-                Full Stack Web Developer Bootcamp <br />
-                2022
-              </div>
-              <div className="priorEduDivs">
-                <b>Damelin College</b> <br />
-                Diploma in Financial Accounting <br />
-                2020
-              </div>
-            </p>
+            <div className="priorEduDivs">
+              <b>HyperionDev</b> <br />
+              Full Stack Web Developer Bootcamp <br />
+              2022
+            </div>
+            <div className="priorEduDivs">
+              <b>Damelin College</b> <br />
+              Diploma in Financial Accounting <br />
+              2020
+            </div>
           </div>
 
-          <div className="work">
+          <div className="work card">
             <h3>Work Experience</h3>
 
             <div className="job">
               <b>Junior Accountant</b> <br />
-              Kiwondo's Sushi (Pty) Ltd (October 2019 to April 2020)
+              Kiwondo's Sushi (Oct 2019 – Apr 2020)
               <hr />
               <p>
-                Responsible for administration of accounts receivable and accounts payable, maintaining the integrity of the general ledger, and working with MS Office, especially Excel, with strong proficiency.
+                Administered accounts receivable/payable, maintained ledger integrity, and worked extensively with MS Excel.
               </p>
             </div>
 
             <div className="job">
               <b>Sales Agent</b> <br />
-              CompCare Wellness Medical (February 2018 to April 2019)
+              CompCare Wellness Medical (Feb 2018 – Apr 2019)
               <hr />
               <p>
-                Promoted the brand and company products to clients, engaged directly with customers, advertised product benefits, and followed up on prospective customers. Assisted international students from French-speaking countries with English difficulties. Helped with medical aid applications and contract signings.
+                Promoted products to clients, helped international students with English challenges, assisted with medical aid applications.
               </p>
             </div>
 
             <div className="job">
               <b>Primary School Educator</b> <br />
-              Damelin College (April to November 2019)
+              Damelin College (Apr – Nov 2019)
               <hr />
-              <p>
-                Assisted senior lecturers and supported first-year students in financial accounting modules.
-              </p>
+              <p>Assisted senior lecturers and supported first-year students in financial accounting.</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Styling for about page */}
       <style jsx>{`
-        .job p {
-          line-height: 1.3rem;
+        :root {
+          --primary-color: #ff6fa3;
+          --secondary-color: #fce8f1;
+          --accent-color: #d6a0f2;
+          --text-color: #333;
+        }
+
+        .breadcrumbs {
           font-size: 0.9rem;
-          padding-top: 0.5rem;
+          margin: 1rem 0;
+          color: #666;
         }
-        hr {
-          padding: 0;
-          margin: 0;
+
+        .breadcrumbs a {
+          color: var(--primary-color);
+          text-decoration: none;
         }
+
+        .breadcrumbs a:hover {
+          text-decoration: underline;
+        }
+
         .aboutPage {
           display: flex;
           flex-direction: column;
-          padding: 1rem 4rem 1rem 4rem;
+          gap: 2rem;
+          padding: 2rem 4rem;
         }
-        .paraAndImage {
+
+        .intro {
           display: flex;
-          flex-direction: row;
-          width: 100%;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
         }
-        .para {
-          width: 78%;
+
+        .profileImage img {
+          border: 3px solid var(--primary-color);
+          box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         }
-        .image {
-          margin-left: auto;
-        }
-        .edu {
-          flex: 1;
-        }
-        .work {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-        }
-        .job {
-          border: 1px solid #c4c4c4;
-          border-radius: 8px;
-          padding: 0.5rem;
+
+        .introText h2 {
+          color: var(--primary-color);
+          font-family: 'Poppins', sans-serif;
           margin-bottom: 0.5rem;
-          background-color: #f6f8fa;
         }
+
+        .introText p {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          color: var(--text-color);
+        }
+
         .eduAndWork {
           display: flex;
-          flex-direction: row;
+          gap: 2rem;
+          flex-wrap: wrap;
         }
+
+        .card {
+          flex: 1;
+          background-color: var(--secondary-color);
+          padding: 1rem;
+          border-radius: 15px;
+          box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+        }
+
         .priorEduDivs {
-          border: 1px solid #c4c4c4;
-          background-color: #d9e5ef;
-          margin: 0.5rem 1rem 0.5rem 0rem;
+          border-radius: 10px;
+          background-color: #fff0f5;
+          margin: 0.5rem 0;
           padding: 0.5rem;
-          border-radius: 8px;
+          border: 1px solid #f5c5d7;
+        }
+
+        .job {
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 0.5rem 1rem;
+          margin-bottom: 1rem;
+          box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .job hr {
+          margin: 0.5rem 0;
+          border: none;
+          border-top: 1px solid #f5c5d7;
+        }
+
+        .job p {
+          font-size: 0.9rem;
+          line-height: 1.4rem;
         }
       `}</style>
     </Layout>

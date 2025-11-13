@@ -15,6 +15,15 @@ const imgStyle = {
 // Home page
 export default (props) => (
   <Layout>
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4QGYSTZEGK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-4QGYSTZEGK');
+    </script>
     <div className="breadcrumbs">Home</div>
     <div className="indexDiv">
             <div className="image">

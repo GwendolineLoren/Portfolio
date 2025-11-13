@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -21,20 +20,6 @@ const Layout = (props) => (
       />
     </Head>
 
-    {/* Google Analytics GA4 */}
-    <Script
-      strategy="afterInteractive"
-      src="https://www.googletagmanager.com/gtag/js?id=G-4QGYSTZEGK"
-    />
-    <Script id="google-analytics" strategy="afterInteractive">
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-4QGYSTZEGK');
-      `}
-    </Script>
-
     <Header />
 
     <div style={layoutStyle}>{props.children}</div>
@@ -51,3 +36,4 @@ const Layout = (props) => (
 );
 
 export default Layout;
+

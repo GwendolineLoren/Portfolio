@@ -5,14 +5,16 @@ import Image from "react-bootstrap/Image";
 export default function About() {
   return (
     <Layout>
+      {/* Breadcrumbs */}
       <div className="breadcrumbs">
         <a href="/">Home</a> <span>&gt;</span> <b>About</b>
       </div>
 
+      {/* Intro Section */}
       <div className="aboutPage">
         <div className="intro">
           <div className="profileImage">
-            <Image src="/profile.jpg" roundedCircle />
+            <Image src="/profile.jpg" roundedCircle style={{ width: "180px" }} />
           </div>
           <div className="introText">
             <h2>Hello! I’m Gwendoline</h2>
@@ -22,6 +24,7 @@ export default function About() {
           </div>
         </div>
 
+        {/* Education & Work */}
         <div className="eduAndWork">
           <div className="edu card">
             <h3>Education</h3>
@@ -68,85 +71,83 @@ export default function About() {
         </div>
       </div>
 
+      {/* Minimal page-specific styles */}
       <style jsx>{`
-        .aboutPage {
-          padding: 2rem;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background-color: #fff0f5; /* light pastel background */
-          color: #ff6f91; /* soft pink text */
-        }
-
         .breadcrumbs {
           font-size: 0.9rem;
-          margin-bottom: 1rem;
+          margin: 1rem 0;
+          color: #666;
         }
-
         .breadcrumbs a {
-          color: #ffa8c5;
+          color: #1155cc; /* simple link color */
           text-decoration: none;
         }
-
         .breadcrumbs a:hover {
-          color: #ff6f91;
+          text-decoration: underline;
+        }
+
+        .aboutPage {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          padding: 2rem 4rem;
         }
 
         .intro {
           display: flex;
           align-items: center;
           gap: 2rem;
-          margin-bottom: 2rem;
-        }
-
-        .profileImage img {
-          width: 150px;
-          height: 150px;
-          border: 4px solid #ffb3c1;
-          transition: transform 0.3s ease-in-out;
-        }
-
-        .profileImage img:hover {
-          transform: scale(1.05);
+          flex-wrap: wrap;
         }
 
         .introText h2 {
-          font-size: 2rem;
           margin-bottom: 0.5rem;
-          letter-spacing: 1px;
         }
 
         .introText p {
-          font-style: italic;
-          line-height: 1.6;
-          max-width: 500px;
+          font-size: 1rem;
+          line-height: 1.5rem;
         }
 
         .eduAndWork {
           display: flex;
-          flex-wrap: wrap;
           gap: 2rem;
+          flex-wrap: wrap;
         }
 
         .card {
           flex: 1;
           padding: 1rem;
-          border-radius: 12px;
-          background-color: #ffe6f0; /* soft pastel pink card */
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .edu h3,
-        .work h3 {
-          color: #ff4d79; /* deeper pink for headings */
-          margin-bottom: 1rem;
-        }
-
-        .job hr {
-          border: 0.5px solid #ffb3c1;
-          margin: 0.5rem 0;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          background-color: #f9f9f9;
         }
 
         .priorEduDivs {
+          border-radius: 8px;
+          background-color: #fff;
+          margin: 0.5rem 0;
+          padding: 0.5rem;
+          border: 1px solid #ccc;
+        }
+
+        .job {
+          background-color: #fff;
+          border-radius: 8px;
+          padding: 0.5rem 1rem;
           margin-bottom: 1rem;
+          border: 1px solid #ccc;
+        }
+
+        .job hr {
+          margin: 0.5rem 0;
+          border: none;
+          border-top: 1px solid #ccc;
+        }
+
+        .job p {
+          font-size: 0.9rem;
+          line-height: 1.4rem;
         }
       `}</style>
     </Layout>

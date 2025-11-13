@@ -1,7 +1,22 @@
 body {
-  margin-left: 0%;        /* or 0 if you want no left margin */
-  margin-bottom: 2rem;    /* example value, adjust as needed */
-  color: rgb(115, 146, 238); /* soft bluish color */
-  font-family: monospace;    /* keeps a coding-style look */
-  background-color: #fff;     /* optional: white background */
+  margin-left: 0%;        /* no left margin */
+  margin-bottom: 2rem;    /* space at bottom */
+  color: #ff6f91;         /* soft pastel pink for text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* clean, readable font */
+  background-color: #fff0f5; /* very light lavender/pink background */
+  line-height: 1.6;       /* improves readability */
+}
+
+/* Optional: links and headings in pastel shades */
+a {
+  color: #ffb3c1;         /* soft pink links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff6f91;         /* darker pink on hover */
+}
+
+h1, h2, h3 {
+  color: #ffa8c5;         /* pastel rose for headings */
 }

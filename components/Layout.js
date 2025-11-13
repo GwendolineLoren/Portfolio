@@ -1,30 +1,18 @@
-// Import components
 import Head from "next/head";
+import Script from "next/script";
 import Header from "./Header";
 import Footer from "./Footer";
 
-// Styling for layout
 const layoutStyle = {
   position: "relative",
   padding: "1rem 1rem 0rem 1rem",
   minHeight: "80vh",
 };
 
-/* Notice in the example below that we pass children and title as props to the Layout components.
-If you remove {children}, the Layout cannot render the content we put inside the Layout element. 
-Have a look at ./pages/index.js to see where we pass props through to this Layout Component. */
 const Layout = (props) => (
   <div>
     <Head>
-      {/* Import bootstrap stylesheet */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-267469379-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-267469379-1');
-      </script>
+      {/* Add other head elements like Bootstrap */}
       <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -32,33 +20,32 @@ const Layout = (props) => (
         crossOrigin="anonymous"
       />
     </Head>
+
+    {/* Google Analytics GA4 */}
+    <Script
+      strategy="afterInteractive"
+      src="https://www.googletagmanager.com/gtag/js?id=G-4QGYSTZEGK"
+    />
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4QGYSTZEGK');
+      `}
+    </Script>
+
     <Header />
 
-    {/* Content for every page */}
     <div style={layoutStyle}>{props.children}</div>
     <Footer />
 
-    {/* Global styles for whole app */}
     <style global jsx>{`
-      body {
-        font-size: 16px;
-      }
-      li {
-        line-height: 1.5rem;
-      }
-      p {
-        line-height: 1.5rem;
-      }
-      a {
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .breadcrumbs {
-        margin-left: 4rem;
-        font-size: 0.8rem;
-      }
+      body { font-size: 16px; }
+      li, p { line-height: 1.5rem; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .breadcrumbs { margin-left: 4rem; font-size: 0.8rem; }
     `}</style>
   </div>
 );

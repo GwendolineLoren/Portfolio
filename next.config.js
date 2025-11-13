@@ -1,5 +1,5 @@
+// next.config.js
 module.exports = {
-  experimental: {
-    outputStandalone: true,
-  },
+  output: 'export', // allows `next export` to generate static files
 };
+

@@ -68,21 +68,85 @@ export default function About() {
         </div>
       </div>
 
-      {/* Component-specific styles */}
       <style jsx>{`
-        /* This style is ONLY for this About page */
-        .introText p {
-          font-style: italic; /* example: make paragraph italic just on About page */
+        .aboutPage {
+          padding: 2rem;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #fff0f5; /* light pastel background */
+          color: #ff6f91; /* soft pink text */
+        }
+
+        .breadcrumbs {
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+        }
+
+        .breadcrumbs a {
+          color: #ffa8c5;
+          text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+          color: #ff6f91;
+        }
+
+        .intro {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .profileImage img {
+          width: 150px;
+          height: 150px;
+          border: 4px solid #ffb3c1;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .profileImage img:hover {
+          transform: scale(1.05);
         }
 
         .introText h2 {
-          letter-spacing: 1px; /* unique About page styling */
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          letter-spacing: 1px;
         }
 
-        /* Maybe a hover effect on profile image for About page */
-        .profileImage img:hover {
-          transform: scale(1.05);
-          transition: transform 0.3s ease-in-out;
+        .introText p {
+          font-style: italic;
+          line-height: 1.6;
+          max-width: 500px;
+        }
+
+        .eduAndWork {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+
+        .card {
+          flex: 1;
+          padding: 1rem;
+          border-radius: 12px;
+          background-color: #ffe6f0; /* soft pastel pink card */
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .edu h3,
+        .work h3 {
+          color: #ff4d79; /* deeper pink for headings */
+          margin-bottom: 1rem;
+        }
+
+        .job hr {
+          border: 0.5px solid #ffb3c1;
+          margin: 0.5rem 0;
+        }
+
+        .priorEduDivs {
+          margin-bottom: 1rem;
         }
       `}</style>
     </Layout>

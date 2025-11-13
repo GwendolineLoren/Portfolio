@@ -1,4 +1,7 @@
 // About page
+import Layout from "../components/Layout";
+import Image from "react-bootstrap/Image";
+
 export default function About() {
   return (
     <Layout>
@@ -9,7 +12,7 @@ export default function About() {
       <div className="aboutPage">
         <div className="intro">
           <div className="profileImage">
-            <Image src="/profile.jpg" roundedCircle style={{ width: "180px" }} />
+            <Image src="/profile.jpg" roundedCircle />
           </div>
           <div className="introText">
             <h2>Hello! I’m Gwendoline</h2>
@@ -65,99 +68,21 @@ export default function About() {
         </div>
       </div>
 
+      {/* Component-specific styles */}
       <style jsx>{`
-        :root {
-          --primary-color: #ff6fa3;
-          --secondary-color: #fce8f1;
-          --accent-color: #d6a0f2;
-          --text-color: #333;
-        }
-
-        .breadcrumbs {
-          font-size: 0.9rem;
-          margin: 1rem 0;
-          color: #666;
-        }
-
-        .breadcrumbs a {
-          color: var(--primary-color);
-          text-decoration: none;
-        }
-
-        .breadcrumbs a:hover {
-          text-decoration: underline;
-        }
-
-        .aboutPage {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          padding: 2rem 4rem;
-        }
-
-        .intro {
-          display: flex;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-        }
-
-        .profileImage img {
-          border: 3px solid var(--primary-color);
-          box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        /* This style is ONLY for this About page */
+        .introText p {
+          font-style: italic; /* example: make paragraph italic just on About page */
         }
 
         .introText h2 {
-          color: var(--primary-color);
-          font-family: 'Poppins', sans-serif;
-          margin-bottom: 0.5rem;
+          letter-spacing: 1px; /* unique About page styling */
         }
 
-        .introText p {
-          font-size: 1rem;
-          line-height: 1.5rem;
-          color: var(--text-color);
-        }
-
-        .eduAndWork {
-          display: flex;
-          gap: 2rem;
-          flex-wrap: wrap;
-        }
-
-        .card {
-          flex: 1;
-          background-color: var(--secondary-color);
-          padding: 1rem;
-          border-radius: 15px;
-          box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .priorEduDivs {
-          border-radius: 10px;
-          background-color: #fff0f5;
-          margin: 0.5rem 0;
-          padding: 0.5rem;
-          border: 1px solid #f5c5d7;
-        }
-
-        .job {
-          background-color: #fff;
-          border-radius: 10px;
-          padding: 0.5rem 1rem;
-          margin-bottom: 1rem;
-          box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
-        }
-
-        .job hr {
-          margin: 0.5rem 0;
-          border: none;
-          border-top: 1px solid #f5c5d7;
-        }
-
-        .job p {
-          font-size: 0.9rem;
-          line-height: 1.4rem;
+        /* Maybe a hover effect on profile image for About page */
+        .profileImage img:hover {
+          transform: scale(1.05);
+          transition: transform 0.3s ease-in-out;
         }
       `}</style>
     </Layout>
